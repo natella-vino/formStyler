@@ -1,11 +1,19 @@
 /*
+<<<<<<< HEAD
  * jQuery Form Styler v1.2.1
+=======
+ * jQuery Form Styler v1.2
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
  * http://dimox.name/jquery-form-styler/
  *
  * Copyright 2012-2013 Dimox (http://dimox.name/)
  * Released under the MIT license.
  *
+<<<<<<< HEAD
  * Date: 2013.01.09
+=======
+ * Date: 2012.11.26
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
  *
  */
 
@@ -145,6 +153,7 @@
 			} else if (el.is('select')) {
 				el.each(function() {
 					if (el.next('span.jqselect').length < 1) {
+<<<<<<< HEAD
 
 						// запрещаем прокрутку страницы при прокрутке селекта
 						function preventScrolling(selector) {
@@ -160,6 +169,12 @@
 						function doSelect() {
 							var selectbox =
 								$('<span' + id + ' class="selectbox jqselect' + cl + '" style="display:inline-block;position:relative;z-index:' + opt.zIndex + '">'+
+=======
+						// одиночный селект
+						function doSelect() {
+							var selectbox =
+								$('<span class="selectbox jqselect" style="display:inline-block;position:relative;z-index:' + opt.zIndex + '">'+
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
 										'<div class="select" style="float:left"><div class="text"></div>'+
 											'<b class="trigger"><i class="arrow"></i></b>'+
 										'</div>'+
@@ -266,10 +281,16 @@
 								});
 							}
 						} // end doSelect()
+<<<<<<< HEAD
 
 						// мультиселект
 						function doMultipleSelect() {
 							var selectbox = $('<span' + id + ' class="selectMultiple jqselect' + cl + '" style="display:inline-block"></span>');
+=======
+						// мультиселект
+						function doMultipleSelect() {
+							var selectbox = $('<span class="selectMultiple jqselect" style="display:inline-block"></span>');
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
 							el.after(selectbox).css({position: 'absolute', left: -9999});
 							var option = el.find('option');
 							var list = '';
@@ -294,8 +315,19 @@
 								ul.css({'height': liHeight * 4});
 							}
 							if (ulHeight > selectbox.height()) {
+<<<<<<< HEAD
 								ul.css('overflowY', 'scroll');
 								preventScrolling(ul);
+=======
+								ul.css('overflowY', 'scroll')
+									// запрещаем прокрутку страницы при прокрутке селекта
+									.bind('mousewheel DOMMouseScroll', function(e) {
+										var scrollTo = null;
+										if (e.type == 'mousewheel') { scrollTo = (e.originalEvent.wheelDelta * -1); }
+										else if (e.type == 'DOMMouseScroll') { scrollTo = 40 * e.originalEvent.detail; }
+										if (scrollTo) { e.preventDefault(); $(this).scrollTop(scrollTo + $(this).scrollTop()); }
+									});
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
 							}
 							if (el.is(':disabled')) {
 								selectbox.addClass('disabled');
@@ -347,7 +379,10 @@
 								});
 							}
 						} // end doMultipleSelect()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d1526f4d2a00bd844930dcbb5ca84b2d83df37e
 						if (el.is('[multiple]')) doMultipleSelect(); else doSelect();
 						// обновление при динамическом изменении
 						el.on('refresh', function() {
