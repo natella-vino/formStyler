@@ -290,6 +290,11 @@
 														if (dropdown.height() > newHeight) dropdown.height(newHeight);
 													}
 												}
+												else {
+                                                                                                  if (visible > 0) {
+                                                                                                     if (dropdown.height() > newHeight) dropdown.height(newHeight);
+                                                                                                  }
+                                                                                               }
 											}
 										}
 
